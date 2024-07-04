@@ -1,5 +1,7 @@
+
 const inquirer = require('inquirer');
-const fs = require('fs');
+const { renderShape } = require('./lib/shapes');
+const { createSVG } = require('./lib/create');
 
 
 inquirer.prompt ([
@@ -11,7 +13,7 @@ inquirer.prompt ([
 
     {
         type: 'input',
-        name: 'color',
+        name: 'textColor',
         message: 'Please enter a color (key word or hexadecimal number) for the text'
     },
 
@@ -24,14 +26,14 @@ inquirer.prompt ([
 
     {
         type: 'input',
-        name: 'color',
+        name: 'shapeColor',
         message: 'Please enter a color (key word or hexadecimal number) for the shape'
     },
 
 
 ])
+.then((response) => {
 
+    createSVG(renderShape(response));
+});
 
-const generateSVG = function () {
-
-};
