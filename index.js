@@ -1,16 +1,16 @@
-// Import inquirer from npm
+
 const inquirer = require('inquirer');
 
 // Import functions renderShape() and createSVG() from other js files
-const { renderShape, newShape } = require('./lib/shapes');
-const { createSVG } = require('./lib/create');
+const { renderShape, createSVG } = require('./lib/create');
+
 
 // Prompts to get input from user regarding the SVG logo properties
 inquirer.prompt ([
     {
         type: 'input',
         name: 'text',
-        message: 'Please enter lgoo text (Must be up to 3 characters only)'
+        message: 'Please enter logo text (Must be up to 3 characters only)'
     },
 
     {
@@ -37,6 +37,15 @@ inquirer.prompt ([
 // Take user input and call the createSVG function to process the logo SVG
 .then((response) => {
 
-createSVG(renderShape(newShape));
+console.log('Response:', response);
+
+const answers = {
+    textContent: response.text,
+    textColor: response.textColor,
+    shape: response.shape,
+    shapeColor: response.shapeColor,   
+}
+
+createSVG(renderShape(answers));
 
 });
