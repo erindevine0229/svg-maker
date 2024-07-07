@@ -1,9 +1,16 @@
 {
-  "dependencies": {
-    "express": "^4.19.2",
-    "inquirer": "^8.2.4"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+    "name": "svg-maker",
+    "version": "1.0.0",
+    "description": "A CLI based logo maker which creates an SVG based on user selected criteria",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "inquirer": "^8.2.6"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    }
 }
