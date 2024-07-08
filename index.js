@@ -9,7 +9,7 @@ const { renderShape, createSVG } = require('./lib/create');
 inquirer.prompt ([
     {
         type: 'input',
-        name: 'text',
+        name: 'textContent',
         message: 'Please enter logo text (Must be up to 3 characters only)',
         validate: function(input) {
             if(input.length >3) {
@@ -28,7 +28,7 @@ inquirer.prompt ([
 
     {
         type: 'list',
-        name: 'shape',
+        name: 'shapeInput',
         message: 'Please select one of the following shapes',
         choices: ['circle', 'square', 'triangle']  
     },
@@ -42,19 +42,12 @@ inquirer.prompt ([
 
 ])
 // Take user input and call the createSVG function to process the logo SVG
-.then((response) => {
+.then((answers) => {
 
-console.log('Response:', response);
+const svgContent = renderShape(answers);
+console.log(svgContent);
 
-// puts responses into an object to store the user input information
-const answers = {
-    textContent: response.text,
-    textColor: response.textColor,
-    shape: response.shape,
-    shapeColor: response.shapeColor,   
-}
-
-createSVG(renderShape(answers));
+createSVG(answers);
 
 })
 // Throw error if not able to execute
