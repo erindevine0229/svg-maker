@@ -19,7 +19,7 @@
 ## Usage
   This application can be used by clients to create simple custom SVG files for logos. The user can select the desired shape (circle, square or triangle) and can enter desired text characters as well as choose color for the text and logo shape (entered as a hex code or color keyword). This information will be exported as a .svg file using the file system package via node. The tests for this app are run through jest and are set up to test for accurate use of the user input in all shape cases. 
 
-  link to screencastify video demo: 
+  link to screencastify video demo: https://drive.google.com/file/d/16tTO8m9gcHeOM5sFUnE7cDlUYvQoLccW/view
     
 ## Credits
   N/A
